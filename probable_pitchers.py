@@ -3,8 +3,8 @@ import pandas as pd
 import numpy as np
 from bs4 import BeautifulSoup
 
-
-date = "2022-06-20" #yyyy-mm-dd format
+#gets the links to individual player pages for pitchers on the probable pitchers page
+date = "2022-07-02" #yyyy-mm-dd format
 
 URL = ("https://www.fangraphs.com/leaders.aspx?pos=all&stats=pit&lg=all&qual=0&type=8&season=2022&month=0&season1=2022&ind=0&team=0&rost=0&age=0&filter=&players=p"
 +date+

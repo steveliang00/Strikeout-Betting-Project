@@ -2,6 +2,7 @@ import requests
 import pandas as pd
 import numpy as np
 from bs4 import BeautifulSoup
+from bs4 import Comment
 
 
 
@@ -14,8 +15,11 @@ def get_daily_projections(player_url):
 
     
     player_soup = BeautifulSoup(player_page.content, "html.parser")
-    daily_projections = player_soup.findAll('div') 
-    print(daily_projections)
+
+    
+    comments = player_soup.find_all(string=lambda text: isinstance(text, Comment))
+    player_info = player_soup.find("div", {"id": "root-player-pages"})
+    print(player_info)
 
 
-get_daily_projections("statss.aspx?playerid=13743&position=P")
+get_daily_projections("statss.aspx?playerid=14107&position=P")

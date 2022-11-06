@@ -14,12 +14,12 @@ def get_daily_projections(player_url):
     player_page = requests.get(site_url)
 
     
-    player_soup = BeautifulSoup(player_page.content, "html.parser")
+    player_soup = BeautifulSoup(player_page.text, "html.parser")
 
     
-    comments = player_soup.find_all(string=lambda text: isinstance(text, Comment))
-    player_info = player_soup.find("div", {"id": "root-player-pages"})
+    
+    player_info = player_soup.findAll("div", {"id": "root-player-pages"})
     print(player_info)
 
 
-get_daily_projections("statss.aspx?playerid=14107&position=P")
+get_daily_projections("statss.aspx?playerid=20070&position=P")
